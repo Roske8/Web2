@@ -1,0 +1,136 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.flexing{
+    display: flex;
+    position: relative;
+    border-right: 1px solid #007bff;
+}
+.new{
+    border-radius: 50%;
+    border: 0.5px solid #007bff;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    padding: 8px;
+    transform: rotate(315deg);
+    background-color: #fff;
+}
+.new p{
+    color: #007bff;
+    font-weight: 1000;
+}
+.img-size{
+    height: 300px;
+    width: 200px;
+}
+.info{
+    padding: 10px;
+    position: relative;
+    width: 300px;
+}
+.info h6{
+    color: #007bff;
+}
+.buttonCart{
+    background-color: #007bff;
+    padding: 5px;
+    color: #eee;
+    border: #eee;
+    position: absolute;
+    bottom: 10px;
+    font-size: 15px;
+}
+#centriranje{
+    display: flex;
+    justify-content: center;
+}
+.info h6{
+    text-align: center;
+    margin-bottom: 5px;
+}
+.info p i{
+    margin-right: 5px;
+    color: #007bff;
+}
+.font-weight{
+    font-weight: 600;
+    font-size: 18px;
+}
+.year{
+    text-align: center;
+    font-size: 16px;
+}
+
+.colorSpan{
+    color: #007bff;
+    font-weight: 600;
+}
+.old-price{
+    text-decoration: line-through;
+    text-decoration-color: #007bff;
+    font-size: 16px;
+}
+.displayFlex{
+    display: flex;
+    justify-content: space-between;
+}
+.spacing{
+    margin-bottom: 40px;
+}
+.sr{
+    margin: 10px 0px
+}
+#back-Top{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #fff;
+    border-style: solid;
+    border-color: #007bff;
+    border-width: 4px;
+    cursor: pointer;
+}
+#arrow{
+    margin-top: 22%;
+    margin-left: 26%;
+    font-size: 20px;
+    color: #1e1e1e;
+}
+#borderMangas{
+    border-bottom: 2px solid #007bff;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+.marginright{
+    margin-right: 10px;
+}
+#borderbottom{
+    border-bottom: 2px solid #007bff !important;
+}
+#margintop{
+    margin-top: 40px !important; 
+}
+#griding{
+    display: grid;
+    place-items: center;
+    margin-top: 40px;
+}
+#bordering{
+    border-bottom: 2px solid #007bff;
+    padding: 10px;
+}
+#sorting{
+    background-color: #007bff;
+    color: #eee;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+#divWidth{
+    width: 1120px;
+}

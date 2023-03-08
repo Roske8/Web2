@@ -1,0 +1,56 @@
+[
+    {
+        "image":{
+            "src": "assets/images/team_01.jpg",
+            "alt": "member1"
+        },
+        "name": "Johnny William",
+        "job": "CO-Founder",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla."
+    },
+    {
+        "image":{
+            "src": "assets/images/team_02.jpg",
+            "alt": "member2"
+        },
+        "name": "Karry Pitcher",
+        "job": "Product Expert",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla."
+    },
+    {
+        "image":{
+            "src": "assets/images/team_03.jpg",
+            "alt": "member3"
+        },
+        "name": "Michael Soft",
+        "job": "Chief Marketing",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla."
+    },
+    {
+        "image":{
+            "src": "assets/images/team_04.jpg",
+            "alt": "member4"
+        },
+        "name": "Mary Cool",
+        "job": "Product Specialist",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla."
+    },
+    {
+        "image":{
+            "src": "assets/images/team_06.jpg",
+            "alt": "member5"
+        },
+        "name": "George Walker",
+        "job": "Product Photographer",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla."
+    },
+    {
+        "image":{
+            "src": "assets/images/team_06.jpg",
+            "alt": "member6"
+        },
+        "name": "Kate Town",
+        "job": "General Manager",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla."
+    }
+]

@@ -1,0 +1,1112 @@
+[
+    {
+        "id": 1,
+        "name": "Shingeki no Kyojin",
+        "relaseDate": 2009,
+        "genreCat":[1,2],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Drama"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Shingeki no Kyojin.jpg",
+            "alt": "Attack on Titan"
+        },
+        "author": "Isayama Hajime",
+        "score": 8.56,
+        "price": 8.30,
+        "discount": 6.30,
+        "relaseStatus": true    
+    },
+    {
+        "id": 2,
+        "name": "Berserk",
+        "relaseDate": 1989,
+        "genreCat":[1,2,3,4,5],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Drama"
+            },
+            {
+                "genre": "Advanture"
+            },
+            {
+                "genre": "Fantasy"
+            },
+            {
+                "genre": "Horror"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Berserk.jpg",
+            "alt": "Berserk"
+        },
+        "author": "Miura Kentarou",
+        "score": 9.47,
+        "price": 10.20,
+        "discount": 7.30,
+        "relaseStatus": false           
+    },
+    {
+        "id": 3,
+        "name": "One Piece",
+        "relaseDate": 1997,
+        "genreCat":[1,3,4],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Drama"
+            },
+            {
+                "genre": "Advanture"
+            },
+            {
+                "genre": "Fantasy"
+            },
+            {
+                "genre": "Horror"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/One Piece.jpg",
+            "alt": "One Piece"
+        },
+        "author": "Oda Eiichiro",
+        "score": 9.21,
+        "price": 7.30,
+        "discount": null,
+        "relaseStatus": false     
+    },
+    {
+        "id": 4,
+        "name": "Chainsaw Man",
+        "relaseDate": 2022,
+        "genreCat":[1,5],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Horror"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Chainsaw Man.jpg",
+            "alt": "Chainsaw Man"
+        },
+        "author": "Fujimoto Tatsuki",
+        "score": 8.76,
+        "price": 8.20,
+        "discount": 4.30,
+        "relaseStatus": false      
+    },
+    {
+        "id": 5,
+        "name": "Tokyo Ghoul",
+        "relaseDate": 2011,
+        "genreCat":[1,2,5],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Drama"
+            },
+            {
+                "genre": "Horror"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Tokyo Ghoul.jpg",
+            "alt": "Tokyo Ghoul"
+        },
+        "author": "Isayama Hajime",
+        "score": 8.52,
+        "price": 8.0,
+        "discount": 6.0,
+        "relaseStatus": true      
+    },
+    {
+        "id": 6,
+        "name": "One Punch-Man",
+        "relaseDate": 2012,
+        "genreCat":[1,6],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Comedy"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/One Punch-Man.jpg",
+            "alt": "One Punch-Man"
+        },
+        "author": "Isayama Hajime",
+        "score": 8.75,
+        "price": 9.0,
+        "discount": null,
+        "relaseStatus": false       
+    },
+    {
+        "id": 7,
+        "name": "Boku no Hero Academia",
+        "relaseDate": 2014,
+        "genreCat":[1],
+        "genres": [
+            {
+                "genre": "Action"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Boku no Hero Academia.jpg",
+            "alt": "Boku no Hero Academia"
+        },
+        "author": "Horikoshi Kouhei",
+        "score": 8.12,
+        "price": 7.40,
+        "discount": null,
+        "relaseStatus": false      
+    },
+    {
+        "id": 8,
+        "name": "Solo Leveling",
+        "relaseDate": 2018,
+        "genreCat":[1,3,4],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Advanture"
+            },
+            {
+                "genre": "Fantasy"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Solo Leveling.jpg",
+            "alt": "Solo Leveling"
+        },
+        "author": "Chogong Jang",
+        "score": 9.80,
+        "price": 12.0,
+        "discount": 9.70,
+        "relaseStatus": true      
+    },
+    {
+        "id": 9,
+        "name": "Naruto",
+        "relaseDate": 1999,
+        "genreCat":[1,3,4],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Advanture"
+            },
+            {
+                "genre": "Fantasy"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Naruto.jpg",
+            "alt": "Naruto"
+        },
+        "author": "Kishimoto Masashi",
+        "score": 8.07,
+        "price": 6.50,
+        "discount": null,
+        "relaseStatus": false        
+    },
+    {
+        "id": 10,
+        "name": "Kimetsu no Yaiba",
+        "relaseDate": 2016,
+        "genreCat":[1,4,5],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Fantasy"
+            },
+            {
+                "genre": "Horror"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Kimetsu no Yaiba.jpg",
+            "alt": "Kimetsu no Yaiba"
+        },
+        "author": "Gotouge Koyaharu",
+        "score": 7.80,
+        "price": 7.40,
+        "discount": null,
+        "relaseStatus": false        
+    },
+    {
+        "id": 11,
+        "name": "Bleach",
+        "relaseDate": 2001,
+        "genreCat":[1,3,4],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Advanture"
+            },
+            {
+                "genre": "Fantasy"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Bleach.jpg",
+            "alt": "Bleach"
+        },
+        "author": "Kubo Tite",
+        "score": 7.82,
+        "price": 5.60,
+        "discount": null,
+        "relaseStatus": false        
+    },
+    {
+        "id": 12,
+        "name": "Jujutsu Kaisen",
+        "relaseDate": 2018,
+        "genreCat":[1,5],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Horror"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Jujutsu Kaisen.jpg",
+            "alt": "Jujutsu Kaisen"
+        },
+        "author": "Autami Gege",
+        "score": 8.53,
+        "price": 9.80,
+        "discount": 6.80,
+        "relaseStatus": false        
+    },
+    {
+        "id": 13,
+        "name": "Fullmetal Alchemist",
+        "relaseDate": 2001,
+        "genreCat":[1,2,4],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Drama"
+            },
+            {
+                "genre": "Fantasy"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Fullmetal Alchemist.jpg",
+            "alt": "Fullmetal Achemist"
+        },
+        "author": "Arakawa Hiromu",
+        "score": 9.4,
+        "price": 5.50,
+        "discount": 4.12,
+        "relaseStatus": true        
+    },
+    {
+        "id": 14,
+        "name": "Spy x Family",
+        "relaseDate": 2019,
+        "genreCat":[1,4],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Fantasy"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Spy x Family.jpg",
+            "alt": "Spy x Family"
+        },
+        "author": "Endou Tatsuya",
+        "score": 8.62,
+        "price": 6.60,
+        "discount": 4.50,
+        "relaseStatus": true        
+    },
+    {
+        "id": 15,
+        "name": "Kaguya-sama wa Kokurasetai",
+        "relaseDate": 2015,
+        "genreCat":[6,7],
+        "genres": [
+            {
+                "genre": "Comedy"
+            },
+            {
+                "genre": "Romance"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Kaguya-sama wa Kokurasetai.jpg",
+            "alt": "Kaguya-sama wa Kokurasetai"
+        },
+        "author": "Akasaka Aka",
+        "score": 8.92,
+        "price": 8.70,
+        "discount": 4.60,
+        "relaseStatus": false        
+    },
+    {
+        "id": 16,
+        "name": "Grand Blue",
+        "relaseDate": 2014,
+        "genreCat":[6],
+        "genres": [
+            {
+                "genre": "Comedy"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Grand Blue.jpg",
+            "alt": "Grand Blue"
+        },
+        "author": "Inoue Kenji",
+        "score": 9.3,
+        "price": 7.21,
+        "discount": null,
+        "relaseStatus": false        
+    },
+    {
+        "id": 17,
+        "name": "5-toubun no Hanayome",
+        "relaseDate": 2014,
+        "genreCat":[6,7],
+        "genres": [
+            {
+                "genre": "Comedy"
+            },
+            {
+                "genre": "Romance"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/5-toubun no Hanayome.jpg",
+            "alt": "5-toubun no Hanayome"
+        },
+        "author": "Haruba Negi",
+        "score": 7.95,
+        "price": 5.90,
+        "discount": null,
+        "relaseStatus": false        
+    },
+    {
+        "id": 18,
+        "name": "Gintama",
+        "relaseDate": 2003,
+        "genreCat":[1,6],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Comedy"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Gintama.jpg",
+            "alt": "Gintama"
+        },
+        "author": "Sorachi Hideaki",
+        "score": 8.62,
+        "price": 8.40,
+        "discount": 5.58,
+        "relaseStatus": false        
+    },
+    {
+        "id": 19,
+        "name": "Nisekoi",
+        "relaseDate": 2011,
+        "genreCat":[6,7],
+        "genres": [
+            {
+                "genre": "Comedy"
+            },
+            {
+                "genre": "Romance"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Nisekoi.jpg",
+            "alt": "Nisekoi"
+        },
+        "author": "Komi Naoshi",
+        "score": 7.73,
+        "price": 6.10,
+        "discount": null,
+        "relaseStatus": false        
+    },
+    {
+        "id": 20,
+        "name": "Orange",
+        "relaseDate": 2011,
+        "genreCat":[6,7],
+        "genres": [
+            {
+                "genre": "Comedy"
+            },
+            {
+                "genre": "Romance"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Orange.jpg",
+            "alt": "Orange"
+        },
+        "author": "Takano Ichigo",
+        "score": 8.32,
+        "price": 8.60,
+        "discount": null,
+        "relaseStatus": false        
+    },
+    {
+        "id": 21,
+        "name": "Vinland Saga",
+        "relaseDate": 2005,
+        "genreCat":[2,3],
+        "genres": [
+            {
+                "genre": "Drama"
+            },
+            {
+                "genre": "Advanture"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Vinland Saga.jpg",
+            "alt": "Vinland Saga"
+        },
+        "author": "Komi Naoshi",
+        "score": 7.73,
+        "price": 6.90,
+        "discount": 4.20,
+        "relaseStatus": true        
+    },
+    {
+        "id": 22,
+        "name": "Fruits Basket",
+        "relaseDate": 1998,
+        "genreCat":[2,7],
+        "genres": [
+            {
+                "genre": "Drama"
+            },
+            {
+                "genre": "Romance"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Fruits Basket.jpg",
+            "alt": "Fruit basket"
+        },
+        "author": "Takaya Natsuki",
+        "score": 8.52,
+        "price": 7.60,
+        "discount": 4.76,
+        "relaseStatus": false        
+    },
+    {
+        "id": 23,
+        "name": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+        "relaseDate": 2015,
+        "genreCat":[2],
+        "genres": [
+            {
+                "genre": "Drama"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e.jpg",
+            "alt": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e"
+        },
+        "author": "Kinugasa Shougo",
+        "score": 8.91,
+        "price": 10.4,
+        "discount": 7.47,
+        "relaseStatus": true        
+    },
+    {
+        "id": 24,
+        "name": "Yakusoku no Neverland",
+        "relaseDate": 2016,
+        "genreCat":[5,8,9],
+        "genres": [
+            {
+                "genre": "Horror"
+            },
+            {
+                "genre": "Mystery"
+            },
+            {
+                "genre": "Sci-fi"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Yakusoku no Neverland.jpg",
+            "alt": "Yakusoku no Neverland"
+        },
+        "author": "Demizu Posuka",
+        "score": 8.18,
+        "price": 7.40,
+        "discount": null,
+        "relaseStatus": null        
+    },
+    {
+        "id": 25,
+        "name": "Tower of God",
+        "relaseDate": 2010,
+        "genreCat":[1,2,4,8,9],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Drama"
+            },
+            {
+                "genre": "Fantasy"
+            },
+            {
+                "genre": "Mystery"
+            },
+            {
+                "genre": "Sci-fi"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Tower of God.jpg",
+            "alt": "Tower of God"
+        },
+        "author": "SIU",
+        "score": 8.41,
+        "price": 8.51,
+        "discount": null,
+        "relaseStatus": null        
+    },
+    {
+        "id": 26,
+        "name": "Kuroshitsuji",
+        "relaseDate": 2006,
+        "genreCat":[1,4,8],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Fantasy"
+            },
+            {
+                "genre": "Mystery"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Kuroshitsuji.jpg",
+            "alt": "Kuroshitsuji"
+        },
+        "author": "Toboso Yana",
+        "score": 8.42,
+        "price": 7.41,
+        "discount": null,
+        "relaseStatus": null        
+    },
+    {
+        "id": 27,
+        "name": "Kakegurui",
+        "relaseDate": 2014,
+        "genreCat":[2,8],
+        "genres": [
+            {
+                "genre": "Drama"
+            },
+            {
+                "genre": "Mystery"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Kakegurui.jpg",
+            "alt": "Kuroshitsuji"
+        },
+        "author": "Toboso Yana",
+        "score": 7.75,
+        "price": 6.40,
+        "discount": null,
+        "relaseStatus": null        
+    },
+    {
+        "id": 28,
+        "name": "Ajin",
+        "relaseDate": 2012,
+        "genreCat":[1,5,8],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Comedy"
+            },
+            {
+                "genre": "Mystery"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Ajin.jpg",
+            "alt": "Ajin"
+        },
+        "author": "Sakurai Gamon",
+        "score": 7.97,
+        "price": 5.60,
+        "discount": null,
+        "relaseStatus": null        
+    },
+    {
+        "id": 29,
+        "name": "Horimiya",
+        "relaseDate": 2011,
+        "genreCat":[7,10],
+        "genres": [
+            {
+                "genre": "Romance"
+            },
+            {
+                "genre": "Slice-of-life"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Horimiya.jpg",
+            "alt": "Horimiya"
+        },
+        "author": "Hagiwara Daisuke",
+        "score": 8.43,
+        "price": 9.30,
+        "discount": 7.45,
+        "relaseStatus": true        
+    },
+    {
+        "id": 30,
+        "name": "Bakuman",
+        "relaseDate": 2008,
+        "genreCat":[2,6,7],
+        "genres": [
+            {
+                "genre": "Drama"
+            },
+            {
+                "genre": "Comedy"
+            },
+            {
+                "genre": "Romance"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Bakuman.jpg",
+            "alt": "Bakuman"
+        },
+        "author": "Obata Takeshi",
+        "score": 8.39,
+        "price": 7.65,
+        "discount": null,
+        "relaseStatus": null        
+    },
+    {
+        "id": 31,
+        "name": "Ao Haru Ride",
+        "relaseDate": 2011,
+        "genreCat":[7],
+        "genres": [
+            {
+                "genre": "Romance"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Ao Haru Ride.jpg",
+            "alt": "Ao Haru Ride"
+        },
+        "author": "Obata Takeshi",
+        "score": 8.15,
+        "price": 7.65,
+        "discount": null,
+        "relaseStatus": null        
+    },
+    {
+        "id": 32,
+        "name": "Kanojo Okarishimasu",
+        "relaseDate": 2017,
+        "genreCat":[6,7],
+        "genres": [
+            {
+                "genre": "Comedy"
+            },
+            {
+                "genre": "Romance"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Kanojo Okarishimasu.jpg",
+            "alt": "Kanojo Okarishimasu"
+        },
+        "author": "Miyamira Reiji",
+        "score": 6.53,
+        "price": 5.40,
+        "discount": null,
+        "relaseStatus": null        
+    },
+    {
+        "id": 33,
+        "name": "Dr. Stone",
+        "relaseDate": 2017,
+        "genreCat":[3,9],
+        "genres": [
+            {
+                "genre": "Advanture"
+            },
+            {
+                "genre": "Sci-fi"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Dr. Stone.jpg",
+            "alt": "Dr. Stone"
+        },
+        "author": "Inagaki Riichiro",
+        "score": 8.20,
+        "price": 8.10,
+        "discount": 6.21,
+        "relaseStatus": true        
+    },
+    {
+        "id": 34,
+        "name": "Made in Abyss",
+        "relaseDate": 2012,
+        "genreCat":[2,3,4,9],
+        "genres": [
+            {
+                "genre": "Drama"
+            },
+            {
+                "genre": "Advanture"
+            },
+            {
+                "genre": "Fantasy"
+            },
+            {
+                "genre": "Sci-fi"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Made in Abyss.jpg",
+            "alt": "Made in Abyss"
+        },
+        "author": "Tsukushi Akihito",
+        "score": 8.78,
+        "price": 7.10,
+        "discount": null,
+        "relaseStatus": null        
+    },
+    {
+        "id": 35,
+        "name": "ReLIFE",
+        "relaseDate": 2012,
+        "genreCat":[2,6,7,10],
+        "genres": [
+            {
+                "genre": "Drama"
+            },
+            {
+                "genre": "Comedy"
+            },
+            {
+                "genre": "Romance"
+            },
+            {
+                "genre": "Slice-of-life"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/ReLIFE.jpg",
+            "alt": "ReLife"
+        },
+        "author": "Yayoi Sou",
+        "score": 8.65,
+        "price": 6.67,
+        "discount": null,
+        "relaseStatus": null        
+    },
+    {
+        "id": 36,
+        "name": "Ijiranaide Nagatoro-san",
+        "relaseDate": 2012,
+        "genreCat":[6,7,10],
+        "genres": [
+            {
+                "genre": "Comedy"
+            },
+            {
+                "genre": "Romance"
+            },
+            {
+                "genre": "Slice-of-life"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Ijiranaide Nagatoro-san.jpg",
+            "alt": "Ijiranaide Nagatoro-san"
+        },
+        "author": "774",
+        "score": 7.66,
+        "price": 6.25,
+        "discount": null,
+        "relaseStatus": null        
+    },
+    {
+        "id": 37,
+        "name": "Sono Bisque Doll wa Koi wo Suru",
+        "relaseDate": 2018,
+        "genreCat":[7,10],
+        "genres": [
+            {
+                "genre": "Romance"
+            },
+            {
+                "genre": "Slice-of-life"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Sono Bisque Doll wa Koi wo Suru.jpg",
+            "alt": "Sono Bisque Doll wa Koi wo Suru"
+        },
+        "author": "774",
+        "score": 8.04,
+        "price": 6.80,
+        "discount": 5.25,
+        "relaseStatus": true        
+    },
+    {
+        "id": 38,
+        "name": "Blue Lock",
+        "relaseDate": 2018,
+        "genreCat":[11],
+        "genres": [
+            {
+                "genre": "Sport"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Blue Lock.jpg",
+            "alt": "Blue Lock"
+        },
+        "author": "Kaneshiro muneyuki",
+        "score": 8.52,
+        "price": 9.40,
+        "discount": 8.25,
+        "relaseStatus": true        
+    },
+    {
+        "id": 39,
+        "name": "Haikyuu!!",
+        "relaseDate": 2012,
+        "genreCat":[11],
+        "genres": [
+            {
+                "genre": "Sport"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Haikyuu!!.jpg",
+            "alt": "Haikyuu!!"
+        },
+        "author": "Furudate Haruichi",
+        "score": 8.85,
+        "price": 7.05,
+        "discount": null,
+        "relaseStatus": false        
+    },
+    {
+        "id": 40,
+        "name": "Kuroko no Basket",
+        "relaseDate": 2008,
+        "genreCat":[6,11],
+        "genres": [
+            {
+                "genre": "Comedy"
+            },
+            {
+                "genre": "Sport"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Kuroko no Basket.jpg",
+            "alt": "Kuroko no Basket"
+        },
+        "author": "Fujimaki Tadatoshi",
+        "score": 8.12,
+        "price": 7.05,
+        "discount": null,
+        "relaseStatus": false        
+    },
+    {
+        "id": 41,
+        "name": "Wind Breaker",
+        "relaseDate": 2013,
+        "genreCat":[1,2,7,11],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Drama"
+            },
+            {
+                "genre": "Romance"
+            },
+            {
+                "genre": "Sport"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Wind Breaker.jpg",
+            "alt": "Wind Breaker"
+        },
+        "author": "Jo Yongseok",
+        "score": 8.59,
+        "price": 8.50,
+        "discount": 3.58,
+        "relaseStatus": false        
+    },
+    {
+        "id": 42,
+        "name": "The Boxer",
+        "relaseDate": 2019,
+        "genreCat":[2,11],
+        "genres": [
+            {
+                "genre": "Drama"
+            },
+            {
+                "genre": "Sport"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/The Boxer.jpg",
+            "alt": "The Boxer"
+        },
+        "author": "Jeong Ji-Hoon",
+        "score": 7.59,
+        "price": 6.61,
+        "discount": null,
+        "relaseStatus": false        
+    },
+    {
+        "id": 43,
+        "name": "Deadman Wonderland",
+        "relaseDate": 2007,
+        "genreCat":[1,2,3,9],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Drama"
+            },
+            {
+                "genre": "Advanture"
+            },
+            {
+                "genre": "Sci-fi"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Deadman Wonderland.jpg",
+            "alt": "Deadman Wonderland"
+        },
+        "author": "Koundou Kazuma",
+        "score": 7.96,
+        "price": 5.61,
+        "discount": null,
+        "relaseStatus": false        
+    },
+    {
+        "id": 44,
+        "name": "Neon Genesis Evangelion",
+        "relaseDate": 2007,
+        "genreCat":[1,2,8,9],
+        "genres": [
+            {
+                "genre": "Action"
+            },
+            {
+                "genre": "Drama"
+            },
+            {
+                "genre": "Mystery"
+            },
+            {
+                "genre": "Sci-fi"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Neon Genesis Evangelion.jpg",
+            "alt": "Neon Genesis Evangelion"
+        },
+        "author": "Sadamato Yoshiyuki",
+        "score": 8.57,
+        "price": 4.21,
+        "discount": null,
+        "relaseStatus": false        
+    },
+    {
+        "id": 45,
+        "name": "Nijiiro Days",
+        "relaseDate": 2011,
+        "genreCat":[6,7,10],
+        "genres": [
+            {
+                "genre": "Comedy"
+            },
+            {
+                "genre": "Romance"
+            },
+            {
+                "genre": "Slice-of-life"
+            }
+        ],
+        "image": {
+            "src": "assets/images/manga/Nijiiro Days.jpg",
+            "alt": "Nijiiro Days"
+        },
+        "author": "Mizuno Minami",
+        "score": 7.98,
+        "price": 6.24,
+        "discount": null,
+        "relaseStatus": false        
+    } 
+]

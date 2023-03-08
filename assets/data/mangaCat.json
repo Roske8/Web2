@@ -1,0 +1,46 @@
+[
+    {
+        "mangaCat": 1,
+        "mangaCatName": "Action" 
+    },
+    {
+        "mangaCat": 2,
+        "mangaCatName": "Drama" 
+    },
+    {
+        "mangaCat": 3,
+        "mangaCatName": "Adventure" 
+    },
+    {
+        "mangaCat": 4,
+        "mangaCatName": "Fantasy" 
+    },
+    {
+        "mangaCat": 5,
+        "mangaCatName": "Horror" 
+    },
+    {
+        "mangaCat": 6,
+        "mangaCatName": "Comedy" 
+    },
+    {
+        "mangaCat": 7,
+        "mangaCatName": "Romance" 
+    },
+    {
+        "mangaCat": 8,
+        "mangaCatName": "Mystery" 
+    },
+    {
+        "mangaCat": 9,
+        "mangaCatName": "Sci-fi" 
+    },
+    {
+        "mangaCat": 10,
+        "mangaCatName": "Slice-of-life" 
+    },
+    {
+        "mangaCat": 11,
+        "mangaCatName": "Sport" 
+    }
+]

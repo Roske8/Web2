@@ -1,0 +1,46 @@
+ @media screen and (max-width: 1025px){
+    .img-size{
+        height: 250px;
+        width: 150px;
+    }
+    .buttonCart{
+        font-size: 12px;
+    }
+    .info h6{
+        font-size: 15px;
+        margin-bottom: 3px;
+    }
+    .info p{
+        font-size: 13px;
+        line-height: 1.7;
+    }
+    .sr{
+        margin-top: 0px;
+    }
+    .year{
+        margin-bottom: -5px;
+    }
+    #divWidth{
+        width: 940px;
+    }
+}
+@media screen and (max-width: 769px){
+    #divWidth{
+        width: 700px;
+    }
+}
+@media screen and (max-width: 426px){
+    #divWidth{
+        width: 400px;
+    }
+}
+@media screen and (max-width: 376px){
+    #divWidth{
+        width: 350px;
+    }
+}
+@media screen and (max-width: 376px){
+    #divWidth{
+        width: 300px;
+    }
+}
