@@ -93,32 +93,6 @@ window.onload = function(){
             teamMembersWrite(member);
         })
   
-
-
-    //     <div class="col-md-4">
-    //     <div class="team-member">
-    //       <div class="thumb-container">
-    //         <img src="assets/images/team_02.jpg" alt="">
-    //         <div class="hover-effect">
-    //           <div class="hover-content">
-    //             <ul class="social-icons">
-    //               <!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-    //               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-    //               <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-    //               <li><a href="#"><i class="fa fa-behance"></i></a></li> -->
-    //             </ul>
-    //           </div>
-    //         </div>
-    //       </div>
-    //       <div class="down-content">
-    //         <h4>Karry Pitcher</h4>
-    //         <span>Product Expert</span>
-    //         <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
-    //       </div>
-    //     </div>
-    //   </div>
-
-
     }
 
 
@@ -165,7 +139,6 @@ function teamMembersWrite(team){
           <div class="down-content">
             <h4>${i.name}</h4>
             <span>${i.job}</span>
-            <p>${i.text}</p>
           </div>
         </div>
       </div>
