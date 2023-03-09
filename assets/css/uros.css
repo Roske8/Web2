@@ -134,3 +134,29 @@
 #divWidth{
     width: 1120px;
 }
+#positioning{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+#img-author{
+    width: 300px;
+    border-radius: 20px;
+}
+#padding-author{
+    padding-top: 200px;
+}
+.displayFlexAround{
+    display: flex;
+    justify-content: space-around;
+}
+.marginBottom{
+    margin-bottom: 20px;
+    font-weight: 700;
+    border-bottom: 1px solid #007bff;
+    text-align: center;
+    padding: 20px;
+}
+#author-p{
+    font-size: 18px;
+}

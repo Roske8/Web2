@@ -93,7 +93,7 @@ a.filled-button:hover {
 }
 
 .about-heading {
-	background-image: url(../images/about-heading.jpg);
+	background-image: url(../images/about-heading.png);
 }
 
 .contact-heading {
@@ -106,6 +106,10 @@ a.filled-button:hover {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+.imageChange{
+	background-position: top !important;
 }
 
 .page-heading .text-content h4 {

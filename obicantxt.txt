@@ -1,0 +1,340 @@
+function Start(){
+    let button = document.querySelector("#send");
+    button.addEventListener("click", processingForm);
+
+    var flName, Email, Subject, Message;
+    var reflName, reEmail, reSubject;
+    flName = document.querySelector("#name");
+    Email = document.querySelector("#email");
+    Subject = document.querySelector("#subject");
+    Message = document.querySelector("#message");
+    Ddown = document.querySelector("#inlineFormCustomSelectPref")
+    reflName = /^[A-Z][a-z]{2,14}(\s[A-Z][a-z]{2,14})+$/;
+    reEmail = /^[a-z]+([\.]?[a-z]*[\d]*)*\@[a-z]+([\.]?[a-z]+)*(\.[a-z]{2,3})+$/;
+    reSubject = /^[A-Z][a-z]{2,14}$/;
+    var messName = "The name and surname was not typed correctly. <br/> For example: Rick Astley";
+    var messEmail = "The Email was not typed correctly. <br/> For example: uros23@gmail.com";
+    var messSubject = "The name of the subject is not typed correctly. <br/> For example: Promotion";
+
+    document.querySelector("#name").addEventListener("blur", function(){
+        if(!reflName.test(flName.value)){
+            flName.nextElementSibling.classList.remove("HidenS");
+            flName.nextElementSibling.innerHTML = messName;
+            flName.classList.add("warning")
+        }
+        else{
+            flName.nextElementSibling.classList.add("HidenS");
+            flName.nextElementSibling.innerHTML = "";
+            flName.classList.remove("warning");
+        }
+    });
+
+    document.querySelector("#email").addEventListener("blur", function(){
+        if(!reEmail.test(Email.value)){
+            Email.nextElementSibling.classList.remove("HidenS");
+            Email.nextElementSibling.innerHTML = messEmail;
+            Email.classList.add("warning")
+        }
+        else{
+            Email.nextElementSibling.classList.add("HidenS");
+            Email.nextElementSibling.innerHTML = "";
+            Email.classList.remove("warning");
+        }
+    });
+
+    document.querySelector("#subject").addEventListener("blur", function(){
+        if(!reSubject.test(Subject.value)){
+            Subject.nextElementSibling.classList.remove("HidenS");
+            Subject.nextElementSibling.innerHTML = messSubject;
+            Subject.classList.add("warning")
+        }
+        else{
+            Subject.nextElementSibling.classList.add("HidenS");
+            Subject.nextElementSibling.innerHTML = "";
+            Subject.classList.remove("warning");
+        }
+    });
+
+    document.querySelector("#message").addEventListener("blur", function(){
+        if(Message.value.length < 15){
+            Message.nextElementSibling.classList.remove("HidenS");
+            Message.nextElementSibling.innerHTML = "There must be at last 15 characters.";
+            Message.classList.add("warning")
+        }
+        else{
+            Message.nextElementSibling.classList.add("HidenS");
+            Message.nextElementSibling.innerHTML = "";
+            Message.classList.remove("warning");
+        }
+    });
+
+
+    document.querySelector("#inlineFormCustomSelectPref").addEventListener("change", function(){
+        var dropDownList = Ddown.options[Ddown.selectedIndex].value;
+        if(dropDownList == "0"){
+            Ddown.nextElementSibling.classList.remove("HidenS");
+            Ddown.nextElementSibling.innerHTML = "Choose something from the list";
+            Ddown.classList.add("warning");
+        }
+        else{
+            Ddown.nextElementSibling.classList.add("HidenS");
+            Ddown.nextElementSibling.innerHTML = "";
+            Ddown.classList.remove("warning");
+        }
+    });
+
+    $("#moreInfo").hide();
+    var count = 0;
+
+    $("#buttonMore").click(function(x){
+        x.preventDefault();
+        if(count % 2 == 0){
+            $("#moreInfo").show();
+            $(this).html("Hide");
+        }
+        else{
+            $("#moreInfo").hide();
+            $(this).html("Show more");
+        }
+        count++;
+    });
+
+    $("#back-Top").hide();
+
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 1500) {
+            $("#back-Top").fadeIn("slow");
+          } else {
+            $("#back-Top").fadeOut("slow");
+          }
+    });
+    $("#back-Top").click(function(){
+        $("html").animate({
+            scrollTop: 0
+        }, 1000)
+    });
+
+}
+function processingForm(){
+    var errors = 0
+    let flName, Email, Subject, Message, Ddown , supp = 1, supp2 = 1;
+
+    flName = document.querySelector("#name");
+    Email = document.querySelector("#email");
+    Subject = document.querySelector("#subject");
+    Message = document.querySelector("#message");
+    nizRadBtn = document.getElementsByName("flexRadioDefault");
+    CheckBox = document.getElementById("flexCheckDefault");
+    Ddown = document.querySelector("#inlineFormCustomSelectPref")
+
+    var reflName, reEmail, reSubject;
+
+    reflName = /^[A-Z][a-z]{2,14}(\s[A-Z][a-z]{2,14})+$/;
+    reEmail = /^[a-z]+([\.]?[a-z]*[\d]*)*\@[a-z]+([\.]?[a-z]+)*(\.[a-z]{2,3})+$/;
+    reSubject = /^[A-Z][a-z]{2,14}$/;
+    
+    errors += checkRegularExpressions(reflName,flName,"The name and surname was not typed correctly. For example: Rick Astley");
+    errors += checkRegularExpressions(reEmail,Email,"The Email was not typed correctly. For example: uros23@gmail.com");
+    errors += checkRegularExpressions(reSubject,Subject,"The name of the subject is not typed correctly. For example: Promotion");
+    
+    let StatRad = "";
+    for(let i = 0 ; i < nizRadBtn.length ; i++){
+        if(nizRadBtn[i].checked){
+            StatRad = nizRadBtn[i].value
+            break;
+        }
+    }
+
+    let StatCheck = "";
+    if(CheckBox.checked){ 
+        StatCheck += CheckBox.value;
+    }
+
+    if(Message.value.length < 15){
+        Message.nextElementSibling.classList.remove("HidenS");
+        Message.nextElementSibling.innerHTML = "There must be at last 15 characters.";
+        Message.classList.add("warning")
+        supp = 1;
+    }
+    else{
+        Message.nextElementSibling.classList.add("HidenS");
+        Message.nextElementSibling.innerHTML = "";
+        Message.classList.remove("warning");
+        supp = 0;
+    }
+
+    var dropDownList = Ddown.options[Ddown.selectedIndex].value;
+
+    if(dropDownList == "0"){
+        Ddown.nextElementSibling.classList.remove("HidenS");
+        Ddown.nextElementSibling.innerHTML = "Choose something from the list";
+        Ddown.classList.add("warning");
+        supp2 = 1;
+    }
+    else{
+        Ddown.nextElementSibling.classList.add("HidenS");
+        Ddown.nextElementSibling.innerHTML = "";
+        Ddown.classList.remove("warning");
+        supp2 = 0;
+    }
+
+    errors += supp2;
+    errors += supp;
+
+    if(!errors){
+        let prints = document.querySelector("#print");
+        prints.setAttribute("class", "alert alert-success mb-3");
+
+        let printing = "Your message has been sent";
+        prints.innerHTML = printing;
+        document.getElementById("print");
+        document.getElementById("form-send").reset();
+    }
+
+    
+    console.log(errors);
+}
+
+function checkRegularExpressions(re, obj, mess){
+    if(!re.test(obj.value)){
+        obj.nextElementSibling.classList.remove("HidenS");
+        obj.nextElementSibling.innerHTML = mess;
+        obj.classList.add("warning")
+        return 1;
+    }
+    else{
+        obj.nextElementSibling.classList.add("HidenS");
+        obj.nextElementSibling.innerHTML = "";
+        obj.classList.remove("warning");
+        return 0
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var nizFormSp = ["ion-ios-location","ion-ios-telephone","ion-email"];
+var nizFormli = ["329 WASHINGTON ST BOSTON, MA 02108","(617) 557-0089","uros23@gmail.com"];
+
+var formIspis = "<p class='more-info'>You can reach me on the given social networks or at this location</p>"
+
+formIspis +="<ul class='list-ico'>"
+
+for(let i = 0 ; i < nizFormSp.length ; i++){
+    formIspis +=`
+        <li><span class="${nizFormSp[i]}"></span>${nizFormli[i]}</li>
+    `;
+}
+formIspis +="</ul>"
+document.querySelector(".more-info").innerHTML = formIspis;
+
+var nizFormHr = ["https://www.facebook.com/facebook/","https://www.instagram.com/","https://twitter.com/i/flow/login","https://www.pinterest.com/","Dokumentacija.pdf","sitemap.xml"];
+var nizFromCl = ["ion-social-facebook","ion-social-instagram","ion-social-twitter","ion-social-pinterest","ion-android-document","ion-map"];
+
+var formIspis1 = "<ul>"
+
+for(let i = 0 ; i < nizFormHr.length ; i++){
+    formIspis1 +=`
+        <li><a href="${nizFormHr[i]}" target="_blank"><span class="ico-circle"><i class="${nizFromCl[i]}"></i></span></a></li>
+    `;
+}
+formIspis1 += "</ul>"
+document.querySelector(".socials").innerHTML = formIspis1;
+
+var nizSel = ["Choose type of web site","Static","Dynamic","What is that?"];
+var nizVal = ["0","ST","DM","WT"];
+var sel = "<select class='custom-select my-1 mr-sm-2' id='inlineFormCustomSelectPref'>"
+            
+for(let i = 0 ; i<nizSel.length ; i++){
+    sel +=`
+    <option value="${nizVal[i]}">${nizSel[i]}</option>
+    `;
+}
+sel += "</select> <p class='alert alert-danger mb-3 HidenS marginTopS'></p>"
+
+document.querySelector("#dropDownList").innerHTML = sel;
+
+var radioButtonId = ["flexRadioDefault1","flexRadioDefault2"];
+var radioButtonLabel = ["Business","I just want a website"]
+var radioButtonChecked = ["","checked"];
+var radioButtonFor = "";
+for(let i = 0 ; i < radioButtonId.length ; i++){
+    radioButtonFor += `
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="${radioButtonId[i]}" ${radioButtonChecked[i]}>
+            <label class="form-check-label" for="${radioButtonId[i]}"> ${radioButtonLabel[i]} </label>
+        </div>
+    `;
+}
+
+document.querySelector("#radioButtonID").innerHTML = radioButtonFor;
+
+//-----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+                    <form action="#" method="post" id="form-send" name="form-send">
+                      <div class="row">
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="First/last name"/>
+                            <p class="alert alert-danger mb-3 HidenS marginTopS"></p>
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"/>
+                            <p class="alert alert-danger mb-3 HidenS marginTopS"></p>
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"/>
+                              <p class="alert alert-danger mb-3 HidenS marginTopS"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <textarea class="form-control" name="message" placeholder="Message" id="message"></textarea>
+                            <p class="alert alert-danger mb-3 HidenS marginTopS"></p>
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-3" id="dropDownList">
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Urgent message  
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-3" id="radioButtonID">
+                        </div>
+                        <p id="print"></p>
+                        <div class="col-md-12">
+                          <input type="button" value ="Send Message" class="button button-a button-big button-rouded" id="send"/>
+                        </div>
+                      </div>
+                    </form>

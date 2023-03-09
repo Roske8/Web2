@@ -33,14 +33,35 @@
     #divWidth{
         width: 400px;
     }
+    #positioning{
+        position: static;
+        bottom: 0px;
+        width: default;
+    }
+    #img-author{
+        margin-left: 45px;
+    }
+    #author-p{
+        margin-bottom: 25px;
+    }
+    #padding-author{
+        padding-top: 130px;
+    }
 }
 @media screen and (max-width: 376px){
     #divWidth{
         width: 350px;
     }
+    #img-author{
+        margin-left: 25px;
+    }
 }
 @media screen and (max-width: 376px){
     #divWidth{
         width: 300px;
+    }
+    #img-author{
+        width: 270px;
+        margin-left: 10px;
     }
 }

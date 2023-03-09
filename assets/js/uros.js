@@ -22,7 +22,7 @@ function AjaxCallBack(url,method,data,manga){
             } else {
             msg = 'Uncaught Error.\n' + jqXHR.responseText;
             }
-            alert(msg);
+            console(msg);
         }
     })
 }
@@ -37,7 +37,7 @@ window.onload = function(){
             saveLS("GotovaManga",manga);
             mangaIspisSest(manga);
         });
-        navProba = ["active","","",""];
+        navProba = ["active","","","",""];
         let carousel = "";
         var navBaner = ["banner-item-01","banner-item-02","banner-item-03"];
         var navh4 = ["Best offer","Flash Deals","Last Minute"];
@@ -66,7 +66,7 @@ window.onload = function(){
 
 
     else if(path == "manga.html"){
-        navProba = ["","active","",""];
+        navProba = ["","active","","",""];
         AjaxCallBack("manga.json","GET","json",function(manga){
             mangaIspisSve(manga);
         });
@@ -87,22 +87,53 @@ window.onload = function(){
 
 
     else if(path == "about.html"){
-        navProba = ["","","active",""];
+        navProba = ["","","active","",""];
         iconsPrint(["https://sr-rs.facebook.com","https://twitter.com","https://linkedin.com","sitemap.xml","dokumentacija.pdf"],["fa fa-facebook","fa fa-twitter","fa fa-linkedin","fa-solid fa-sitemap","fa-solid fa-file"], "#ul-about-us");
         AjaxCallBack("member.json","GET","json",function(member){
             teamMembersWrite(member);
         })
+        let partnersImg = ["assets/images/client-01.png","assets/images/client-02.png","assets/images/client-04.png","assets/images/client-05.png","assets/images/client-06.png"];
+        let partnersAlt = ["partner1","partner2","partner4","partner5","partner6"];
+        let aboutWrite = "";
+        for(let i = 0 ; i<partnersAlt.length ; i++){
+            aboutWrite +=`
+            <div class="client-item">
+                <img src="${partnersImg[i]}" alt="${partnersAlt[i]}">
+            </div>
+            `
+        }
+        document.querySelector("#partnersAttach").innerHTML = aboutWrite;
   
     }
 
 
-    else{
-        navProba = ["","","","active"];
-    }
+    else if(path == "contact.html"){
+        navProba = ["","","","active",""];
+        iconsPrint(["https://sr-rs.facebook.com","https://twitter.com","https://linkedin.com","https://www.instagram.com"],["fa fa-facebook","fa fa-twitter","fa fa-linkedin","fa-brands fa-square-instagram"], "#checkOutIcon")
+        
+        // let questionTitle = ["Do you have mangas in other languages?","How long is postage waiting?","Are there any discount codes?","Is there any refund?"]
+        // let questionText = ["At MangaRel, we offer manga titles in a variety of languages, not just English. Our collection includes manga in Japanese, Chinese, Korean, French, Spanish, and other languages. We believe that manga is a global phenomenon, and we want to provide our customers with access to manga in their preferred language.","The length of postage waiting time may vary depending on your location and the shipping option you select at checkout. We offer several shipping options, including standard shipping, expedited shipping, and express shipping, each with different estimated delivery times. For standard shipping, the estimated delivery time is usually within 7-14 business days, while expedited shipping can take between 3-5 business days. If you need your manga titles urgently, we also offer express shipping with an estimated delivery time of 1-2 business days. Please note that these delivery times are estimates and may vary depending on your location and other factors such as customs clearance procedures. Once your order has been shipped, we will provide you with a tracking number so you can keep track of your shipment's progress.","We occasionally offer discount codes to our customers as part of promotional campaigns or special events. To stay updated on our latest promotions and discount codes, you can subscribe to our newsletter or follow us on social media. Additionally, we also offer special discounts for customers who sign up for our loyalty program or purchase manga titles in bulk. If you're interested in these discount options, please contact our customer support team, and they will be happy to provide you with more information.","Yes, we offer refunds for manga titles purchased from our site under certain conditions. If you receive a damaged or defective product, or if the product you receive is not the one you ordered, you can request a refund or exchange. Yes, we offer refunds for manga titles purchased from our site under certain conditions. If you receive a damaged or defective product, or if the product you receive is not the one you ordered, you can request a refund or exchange."]
 
-    var navListHref = ["index.html","manga.html","about.html","contact.html"];
-    var navName = ["Home","Manga","About us","Check out"];
-    
+        // let questions ="";
+        // for(let i = 0 ; i<questionText.length ; i++){
+        //     questions += `
+        //         <li>
+        //             <a>${questionTitle[i]}</a>
+        //             <div class="content">
+        //                 <p>${questionText[i]}</p>
+        //             </div>
+        //         </li>
+        //     `
+        // }
+        // document.querySelector("#checkoutUl").innerHTML = questions;
+
+
+    }
+    else{
+        navProba = ["","","","","active"];
+    }
+    var navListHref = ["index.html","manga.html","about.html","contact.html","author.html"];
+    var navName = ["Home","Manga","About us","Check out","Author"];
     var ispis ="";
     for(let i = 0 ; i<navListHref.length ; i++){
         ispis += `
@@ -111,7 +142,7 @@ window.onload = function(){
             </li>`
     }
     
-    document.querySelector("#nakacitise").innerHTML = ispis;
+    document.querySelector(".nakacitise").innerHTML = ispis;
     
     $(document).on("change","#sorting",change);
     $(document).on("click",".category",change);
@@ -120,7 +151,6 @@ window.onload = function(){
 };
 
 function teamMembersWrite(team){
-    console.log(team);
     let write = "";
     for(let i of team){
         write += `
@@ -363,3 +393,6 @@ function mangaIspisSve(manga){
 }
 
 // LOCAL STORAGE  SVIM BUTTONIMA DAJEM KLASU I ISTO RADIM KAO SA CHECK BOXOVIMA NA CLICK I PREKO QUERY SELECT SA THISI UBACUJEM U NIZ GDE CE BITI LOCALSTORAGE
+//NAKON TOGA U CHECK OUT-U POZIVAM LOCALSTORAGE SA NAZIVOM TOG KEY-A TJ NIZA KOJE JE SVE PROIZOVDE SELEKTOVAO
+// I ONDA GA SAMO ISPISEM U NEKI DIV ZA PRIKAZ. FORMA TAKODJE MOZE DA SADRZI IF I DA PITA DA LI JE TAJ NIZ SA PROIZVODIMA PRAZAN AKO JESTE USLOV NIJE ISPUENJEN I NE MOZE DA SE PORUCI AKO JESTE MOZE. 
+// PROBLEM NE MOZE VALUE DA SE UZIMA MORA NESTO DRUGO!!! POGLEDATI PREKO FONA CHATGPT
