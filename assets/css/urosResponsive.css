@@ -28,6 +28,12 @@
     #divWidth{
         width: 700px;
     }
+    #buttonSend{
+        width: 20%;;
+        padding: 0px;
+        font-size: 15px;
+        border-radius: 10px;
+    }
 }
 @media screen and (max-width: 426px){
     #divWidth{

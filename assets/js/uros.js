@@ -128,14 +128,82 @@ window.onload = function(){
         
 
 
-        formElementsText("col-md-6","inputEmail4","Email","inputEmail4","joedoe@gmail.com");
+        formElementsText("col-md-6","inputEmail","Email","inputEmail","joedoe@gmail.com");
         formElementsText("col-md-6","inputFullName","Full Name","inputFullName","Joe Doe");
         formElementsText("col-12","inputAddress","Address","inputAddress","Joe Does 8");
-        formElementsText("col-12","inputAddress2","Address 2","inputAddress2","Apartment, studio, or floor");
+        formElementsText("col-12","inputAddress2","Address 2","inputAddress2","If you want. Not necessary");
         formElementsText("col-md-6","inputCity","City","inputCity","Belgrade");
-        formDropDown("col-md-4","inputState","State","inputState",[1,2,3,4],["Serbia","Russia","China","Argentina"]);
+        formDropDown("col-md-4","inputState","State","inputState",[1,2,3,4,5,6,7,8,9,10],["Serbia","Russia","China","Argentina","Germany","France","Italy","Spain","Poland","Japanese"]);
         formElementsText("col-md-2","inputZip","Zip","inputZip","");
+        var ch = "";
+        ch = `
+        <div class="col-12">
+            <div class="displayForm">
+                <label for="gridCheck">Remember me</label>
+                <input type="checkbox" id="gridCheck" value="1"/>
+            </div> 
+        </div>
+
+        `
+        document.querySelector("#formAttach").innerHTML += ch;
         buttonFrom("col-12","Order");
+        
+
+        var Email,flname,Address,City,Zip,DropDown
+        var reEmail,reflName,reAddress,reCity,reZip
+        Email = document.querySelector("#inputEmail");
+        flname = document.querySelector("#inputFullName");
+        Address = document.querySelector("#inputAddress");
+        City = document.querySelector("#inputCity");
+        Zip = document.querySelector("#inputZip");
+        DropDown = document.querySelector("#inputState");
+        checkBoxCheck = document.querySelector("#gridCheck");
+
+        reEmail = /^[a-z]+([\.]?[a-z]*[\d]*)*\@[a-z]+([\.]?[a-z]+)*(\.[a-z]{2,3})+$/;
+        reflName = /^[A-Z][a-z]{2,14}(\s[A-Z][a-z]{2,14})+$/;
+        reAddress = /^[A-Za-z]+(?: [A-Za-z]+)? \d+$/;
+        reZip = /^\d{5}$/;
+        reCity =  /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+
+        emailMess = "Email was not typed correctly";
+        flnameMess = "Name was not typed correctly";
+        cityMess = "City was not typed correctly";
+        addressMess = "City was not typed correctly";
+        zipMess = "City was not typed correctly";
+        dropDownMess = "Please select state";
+
+        Email.addEventListener("blur", function(){
+            formCheck(reEmail,Email,emailMess)
+        });
+        flname.addEventListener("blur", function(){
+            formCheck(reflName,flname,flnameMess)
+        })
+        City.addEventListener("blur", function(){
+            formCheck(reCity,City,cityMess)
+        })
+        Address.addEventListener("blur", function(){
+            formCheck(reAddress,Address,addressMess)
+        })
+        Zip.addEventListener("blur", function(){
+            formCheck(reZip,Zip,zipMess)
+        })
+        DropDown.addEventListener("change", function(){
+            var drop = DropDown.options[DropDown.selectedIndex].value
+            if(drop == "0"){
+                DropDown.nextElementSibling.classList.remove("erorrs")
+                DropDown.nextElementSibling.innerHTML = dropDownMess;
+                DropDown.classList.add("warning");
+            }
+            else{
+                DropDown.nextElementSibling.classList.add("erorrs")
+                DropDown.nextElementSibling.innerHTML = "";
+                DropDown.classList.remove("warning");
+            }
+        })
+
+        document.querySelector("#buttonSend").addEventListener("click", function(){
+            buttonFormCheck();
+        })
 
     }
     else if(path == "author.html"){
@@ -160,14 +228,96 @@ window.onload = function(){
     $(document).on("click",".category",change);
 
 
-};
+}
+
+function buttonFormCheck(){
+    var Email,flname,Address,City,Zip,DropDown
+    var reEmail,reflName,reAddress,reCity,reZip
+    var erorrs = 0;
+    var supp = 0;
+
+    Email = document.querySelector("#inputEmail");
+    flname = document.querySelector("#inputFullName");
+    Address = document.querySelector("#inputAddress");
+    City = document.querySelector("#inputCity");
+    Zip = document.querySelector("#inputZip");
+    DropDown = document.querySelector("#inputState");
+
+    reEmail = /^[a-z]+([\.]?[a-z]*[\d]*)*\@[a-z]+([\.]?[a-z]+)*(\.[a-z]{2,3})+$/;
+    reflName = /^[A-Z][a-z]{2,14}(\s[A-Z][a-z]{2,14})+$/;
+    reAddress = /^[A-Za-z]+(?: [A-Za-z]+)? \d+$/;
+    reZip = /^\d{5}$/;
+    reCity =  /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+
+    emailMess = "Email was not typed correctly";
+    flnameMess = "Name was not typed correctly";
+    cityMess = "City was not typed correctly";
+    addressMess = "Address was not typed correctly";
+    zipMess = "Zip was not typed correctly";
+    dropDownMess = "Please select state";
+
+    erorrs += formCheck(reEmail,Email,emailMess);
+    erorrs += formCheck(reflName,flname,flnameMess);
+    erorrs += formCheck(reAddress,Address,addressMess);
+    erorrs += formCheck(reCity,City,cityMess);
+    erorrs += formCheck(reZip,Zip,zipMess);
+
+
+    let statCheck = "";
+    if(checkBoxCheck.checked){
+        statCheck = checkBoxCheck.value;
+    }
+
+    var drop = DropDown.options[DropDown.selectedIndex].value
+    if(drop == "0"){
+        DropDown.nextElementSibling.classList.remove("erorrs")
+        DropDown.nextElementSibling.innerHTML = dropDownMess;
+        DropDown.classList.add("warning");
+        supp = 1;
+    }
+    else{
+        DropDown.nextElementSibling.classList.add("erorrs")
+        DropDown.nextElementSibling.innerHTML = "";
+        DropDown.classList.remove("warning");
+        supp = 0;
+    }
+
+    erorrs += supp;
+    if(!erorrs){
+        let print = document.querySelector("#nesto");
+        print.setAttribute("class","alert alert-success mb-3");
+
+        let prints = "The order was successfully executed";
+        print.innerHTML = prints;
+        document.getElementById("buttonSend");
+        document.getElementById("formAttach").reset();
+    }
+
+    console.log(erorrs);
+}
+
+function formCheck(reg,element,mess){
+    if(!reg.test(element.value)){
+        element.nextElementSibling.classList.remove("erorrs")
+        element.nextElementSibling.innerHTML = mess;
+        element.classList.add("warning");
+        return 1;
+    }
+    else{
+        element.nextElementSibling.classList.add("erorrs")
+        element.nextElementSibling.innerHTML = "";
+        element.classList.remove("warning");
+        return 0;
+    }
+}
 
 function buttonFrom(divCol,buttonName){
     write = "";
     write +=`
         <div class="${divCol}">
-            <button type="submit" class="btn btn-primary">${buttonName}</button>
+            <input type="button" class="btn btn-primary" id="buttonSend" value="${buttonName}"/>
         </div>
+        <p id="nesto"></p>
     `
     document.querySelector("#formAttach").innerHTML += write
 }
@@ -192,17 +342,19 @@ function formDropDown(divCol,LabelFor,LabelName,Id,nizValue,nizName){
             <option value="0">Select</option>
             ${optionsForm(nizValue,nizName)}
         </select>
+        <p class="alert alert-danger erorrs" id="margin-tops"></p>
     </div>
     `
     document.querySelector("#formAttach").innerHTML += write;
 }
 
-function formElementsText(divCol,LabelFor,LabelName,id,placeholder,){
+function formElementsText(divCol,LabelFor,LabelName,id,placeholder){
     write = "";
     write += `
     <div class="${divCol}">
         <label for="${LabelFor}" class="form-label">${LabelName}</label>
-        <input type="text" class="form-control" id="${id}" placeholder="${placeholder}">
+        <input type="text" class="form-control inputText" id="${id}" placeholder="${placeholder}"/>
+        <p class="alert alert-danger erorrs"></p>
     </div>
     `
     document.querySelector("#formAttach").innerHTML += write;

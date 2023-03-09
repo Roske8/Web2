@@ -338,3 +338,38 @@ document.querySelector("#radioButtonID").innerHTML = radioButtonFor;
                         </div>
                       </div>
                     </form>
+
+
+
+        Email.addEventListener("blur",formCheck(reEmail,Email,emailMess));
+
+
+        
+        function formCheck(reg,element,mess){
+            if(!reg.test(element.value)){
+                element.nextElementSibling.classList.remove("erorrs")
+                element.nextElementSibling.innerHTML = mess;
+                element.classList.add("warning");
+            }
+            else{
+                element.nextElementSibling.classList.add("erorrs")
+                element.nextElementSibling.innerHTML = "";
+                element.classList.remove("warning");
+            }
+        }
+
+
+
+
+        Email.addEventListener("blur",function(){
+            if(!reEmail.test(Email.value)){
+                Email.nextElementSibling.classList.remove("erorrs")
+                Email.nextElementSibling.innerHTML = emailMess;
+                Email.classList.add("warning");
+            }
+            else{
+                Email.nextElementSibling.classList.add("erorrs")
+                Email.nextElementSibling.innerHTML = "";
+                Email.classList.remove("warning");
+            }
+        })
