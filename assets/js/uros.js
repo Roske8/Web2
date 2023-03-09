@@ -4,25 +4,24 @@ function AjaxCallBack(url,method,data,manga){
         method: method,
         dataType: data,
         success: manga,
-        error: function(jqXHR, exception){
-            // console.log(jqXHR);
-            var msg = '';
-            if (jqXHR.status === 0) {
-            msg = 'Not connect.\n Verify Network.';
-            } else if (jqXHR.status == 404) {
-            msg = 'Requested page not found. [404]';
-            } else if (jqXHR.status == 500) {
-            msg = 'Internal Server Error [500].';
+        error: function(stat, exception){
+            var allert = '';
+            if (stat.status === 0) {
+            allert = 'Not connect.\n Verify Network.';
+            } else if (stat.status == 404) {
+            allert = 'Requested page not found. [404]';
+            } else if (stat.status == 500) {
+            allert = 'Internal Server Error [500].';
             } else if (exception === 'parsererror') {
-            msg = 'Requested JSON parse failed.';
+            allert = 'Requested JSON parse failed.';
             } else if (exception === 'timeout') {
-            msg = 'Time out error.';
+            allert = 'Time out error.';
             } else if (exception === 'abort') {
-            msg = 'Ajax request aborted.';
+            allert = 'Ajax request aborted.';
             } else {
-            msg = 'Uncaught Error.\n' + jqXHR.responseText;
+            allert = 'Uncaught Error.\n' + stat.responseText;
             }
-            console(msg);
+            console.log(allert);
         }
     })
 }
@@ -37,7 +36,7 @@ window.onload = function(){
             saveLS("GotovaManga",manga);
             mangaIspisSest(manga);
         });
-        navProba = ["active","","","",""];
+        navProba = ["","active","","","",""];
         let carousel = "";
         var navBaner = ["banner-item-01","banner-item-02","banner-item-03"];
         var navh4 = ["Best offer","Flash Deals","Last Minute"];
@@ -66,7 +65,7 @@ window.onload = function(){
 
 
     else if(path == "manga.html"){
-        navProba = ["","active","","",""];
+        navProba = ["","","active","","",""];
         AjaxCallBack("manga.json","GET","json",function(manga){
             mangaIspisSve(manga);
         });
@@ -87,7 +86,7 @@ window.onload = function(){
 
 
     else if(path == "about.html"){
-        navProba = ["","","active","",""];
+        navProba = ["","","","active","",""];
         iconsPrint(["https://sr-rs.facebook.com","https://twitter.com","https://linkedin.com","sitemap.xml","dokumentacija.pdf"],["fa fa-facebook","fa fa-twitter","fa fa-linkedin","fa-solid fa-sitemap","fa-solid fa-file"], "#ul-about-us");
         AjaxCallBack("member.json","GET","json",function(member){
             teamMembersWrite(member);
@@ -108,7 +107,7 @@ window.onload = function(){
 
 
     else if(path == "contact.html"){
-        navProba = ["","","","active",""];
+        navProba = ["","","","","active",""];
         iconsPrint(["https://sr-rs.facebook.com","https://twitter.com","https://linkedin.com","https://www.instagram.com"],["fa fa-facebook","fa fa-twitter","fa fa-linkedin","fa-brands fa-square-instagram"], "#checkOutIcon")
         
         // let questionTitle = ["Do you have mangas in other languages?","How long is postage waiting?","Are there any discount codes?","Is there any refund?"]
@@ -126,14 +125,27 @@ window.onload = function(){
         //     `
         // }
         // document.querySelector("#checkoutUl").innerHTML = questions;
+        
 
 
+        formElementsText("col-md-6","inputEmail4","Email","inputEmail4","joedoe@gmail.com");
+        formElementsText("col-md-6","inputFullName","Full Name","inputFullName","Joe Doe");
+        formElementsText("col-12","inputAddress","Address","inputAddress","Joe Does 8");
+        formElementsText("col-12","inputAddress2","Address 2","inputAddress2","Apartment, studio, or floor");
+        formElementsText("col-md-6","inputCity","City","inputCity","Belgrade");
+        formDropDown("col-md-4","inputState","State","inputState",[1,2,3,4],["Serbia","Russia","China","Argentina"]);
+        formElementsText("col-md-2","inputZip","Zip","inputZip","");
+        buttonFrom("col-12","Order");
+
+    }
+    else if(path == "author.html"){
+        navProba = ["","","","","","active"];
     }
     else{
-        navProba = ["","","","","active"];
+        navProba = ["active","","","","",""]
     }
-    var navListHref = ["index.html","manga.html","about.html","contact.html","author.html"];
-    var navName = ["Home","Manga","About us","Check out","Author"];
+    var navListHref = ["cart.html","index.html","manga.html","about.html","contact.html","author.html"];
+    var navName = ["<i class='fa-solid fa-cart-shopping'></i>","Home","Manga","About us","Check out","Author"];
     var ispis ="";
     for(let i = 0 ; i<navListHref.length ; i++){
         ispis += `
@@ -149,6 +161,52 @@ window.onload = function(){
 
 
 };
+
+function buttonFrom(divCol,buttonName){
+    write = "";
+    write +=`
+        <div class="${divCol}">
+            <button type="submit" class="btn btn-primary">${buttonName}</button>
+        </div>
+    `
+    document.querySelector("#formAttach").innerHTML += write
+}
+
+function optionsForm(nizValue,nizName){
+    write = "";
+    for(i = 0 ; i<nizValue.length ; i++){
+        write += `
+            <option value="${nizValue[i]}">${nizName[i]}</option>
+        `
+    }
+    console.log(write)
+    return write;
+}
+
+function formDropDown(divCol,LabelFor,LabelName,Id,nizValue,nizName){
+    write = "";
+    write +=`
+    <div class="${divCol}">
+        <label for="${LabelFor}" class="form-label">${LabelName}</label>
+        <select id="${Id}" class="form-select">
+            <option value="0">Select</option>
+            ${optionsForm(nizValue,nizName)}
+        </select>
+    </div>
+    `
+    document.querySelector("#formAttach").innerHTML += write;
+}
+
+function formElementsText(divCol,LabelFor,LabelName,id,placeholder,){
+    write = "";
+    write += `
+    <div class="${divCol}">
+        <label for="${LabelFor}" class="form-label">${LabelName}</label>
+        <input type="text" class="form-control" id="${id}" placeholder="${placeholder}">
+    </div>
+    `
+    document.querySelector("#formAttach").innerHTML += write;
+}
 
 function teamMembersWrite(team){
     let write = "";
