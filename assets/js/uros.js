@@ -68,6 +68,17 @@ window.onload = function(){
         navProba = ["","","active","","",""];
         AjaxCallBack("manga.json","GET","json",function(manga){
             mangaIspisSve(manga);
+            let nesto = document.querySelectorAll(".kliknutiKorpa");
+            console.log(nesto.length);
+            var korpica = [];
+            document.querySelectorAll(".kliknutiKorpa").forEach(button =>{
+                button.addEventListener("click", function(){
+                    let value = button.getAttribute('data-')
+                    korpica.push(parseInt(value));
+                    console.log(korpica) 
+                })
+            })
+            
         });
         AjaxCallBack("mangaCat.json","GET","json",function(checkbox){
             checkBoxW(checkbox);
@@ -83,16 +94,7 @@ window.onload = function(){
         write += "</select>"
         document.querySelector("#borderMangas").innerHTML = write;
 
-        let nesto = document.querySelectorAll(".kliknutiKorpa");
-        console.log(nesto.length);
-        var korpica = [];
-        document.querySelectorAll(".kliknutiKorpa").forEach(button =>{
-            button.addEventListener("click", function(){
-                let value = button.getAttribute('data-')
-                korpica.push(parseInt(value));
-                console.log(korpica) 
-            })
-        })
+
     }
 
 
@@ -120,22 +122,6 @@ window.onload = function(){
     else if(path == "contact.html"){
         navProba = ["","","","","active",""];
         iconsPrint(["https://sr-rs.facebook.com","https://twitter.com","https://linkedin.com","https://www.instagram.com"],["fa fa-facebook","fa fa-twitter","fa fa-linkedin","fa-brands fa-square-instagram"], "#checkOutIcon")
-        
-        // let questionTitle = ["Do you have mangas in other languages?","How long is postage waiting?","Are there any discount codes?","Is there any refund?"]
-        // let questionText = ["At MangaRel, we offer manga titles in a variety of languages, not just English. Our collection includes manga in Japanese, Chinese, Korean, French, Spanish, and other languages. We believe that manga is a global phenomenon, and we want to provide our customers with access to manga in their preferred language.","The length of postage waiting time may vary depending on your location and the shipping option you select at checkout. We offer several shipping options, including standard shipping, expedited shipping, and express shipping, each with different estimated delivery times. For standard shipping, the estimated delivery time is usually within 7-14 business days, while expedited shipping can take between 3-5 business days. If you need your manga titles urgently, we also offer express shipping with an estimated delivery time of 1-2 business days. Please note that these delivery times are estimates and may vary depending on your location and other factors such as customs clearance procedures. Once your order has been shipped, we will provide you with a tracking number so you can keep track of your shipment's progress.","We occasionally offer discount codes to our customers as part of promotional campaigns or special events. To stay updated on our latest promotions and discount codes, you can subscribe to our newsletter or follow us on social media. Additionally, we also offer special discounts for customers who sign up for our loyalty program or purchase manga titles in bulk. If you're interested in these discount options, please contact our customer support team, and they will be happy to provide you with more information.","Yes, we offer refunds for manga titles purchased from our site under certain conditions. If you receive a damaged or defective product, or if the product you receive is not the one you ordered, you can request a refund or exchange. Yes, we offer refunds for manga titles purchased from our site under certain conditions. If you receive a damaged or defective product, or if the product you receive is not the one you ordered, you can request a refund or exchange."]
-
-        // let questions ="";
-        // for(let i = 0 ; i<questionText.length ; i++){
-        //     questions += `
-        //         <li>
-        //             <a>${questionTitle[i]}</a>
-        //             <div class="content">
-        //                 <p>${questionText[i]}</p>
-        //             </div>
-        //         </li>
-        //     `
-        // }
-        // document.querySelector("#checkoutUl").innerHTML = questions;
         
         if(reachLS("Korisnik")){
             let nesto = reachLS("Korisnik");
@@ -243,45 +229,6 @@ window.onload = function(){
     }
     else{
         navProba = ["active","","","","",""]
-
-        
-
-        // document.querySelector(".kliknutiKorpa").addEventListener("click", function(){
-        //     korpa();
-        // });
-
-        // function proveraKorpa(proizvodiKorpa){
-        //     let korpica = [];
-        //     let buttons = document.querySelectorAll(".kliknutiKorpa")
-        //     buttons.forEach(button =>{
-        //         button.addEventListener('click',function(){
-        //             const value = button.value ;
-        //             korpica.push(value);
-        //             console.log(korpica)
-        //         })
-        //     })
-        // }
-
-        // let nesto = document.querySelectorAll(".kliknutiKorpa");
-        // console.log(nesto.length);
-        // var korpica = [];
-        // document.querySelectorAll(".kliknutiKorpa").forEach(button =>{
-        //     button.addEventListener("click", function(){
-        //         let value = button.getAttribute('data-')
-        //         korpica.push(parseInt(value)); 
-        //         console.log(korpica)
-        //     })
-        // })
-
-
-        // function korpa(){
-        //     let proizvodiKorpa = reachLS("GotovaManga");
-        //     proizvodiKorpa = proveraKorpa(proizvodiKorpa);
-        //     // mangaIspisSve(proizvodiKorpa);
-        // }
-
-
-
     }
     var navListHref = ["cart.html","index.html","manga.html","about.html","contact.html","author.html"];
     var navName = ["<i class='fa-solid fa-cart-shopping'></i>","Home","Manga","About us","Check out","Author"];
