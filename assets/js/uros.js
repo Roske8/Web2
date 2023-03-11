@@ -82,6 +82,17 @@ window.onload = function(){
         }
         write += "</select>"
         document.querySelector("#borderMangas").innerHTML = write;
+
+        let nesto = document.querySelectorAll(".kliknutiKorpa");
+        console.log(nesto.length);
+        var korpica = [];
+        document.querySelectorAll(".kliknutiKorpa").forEach(button =>{
+            button.addEventListener("click", function(){
+                let value = button.getAttribute('data-')
+                korpica.push(parseInt(value));
+                console.log(korpica) 
+            })
+        })
     }
 
 
@@ -205,12 +216,52 @@ window.onload = function(){
             buttonFormCheck();
         })
 
+
     }
     else if(path == "author.html"){
         navProba = ["","","","","","active"];
     }
     else{
         navProba = ["active","","","","",""]
+
+        
+
+        // document.querySelector(".kliknutiKorpa").addEventListener("click", function(){
+        //     korpa();
+        // });
+
+        // function proveraKorpa(proizvodiKorpa){
+        //     let korpica = [];
+        //     let buttons = document.querySelectorAll(".kliknutiKorpa")
+        //     buttons.forEach(button =>{
+        //         button.addEventListener('click',function(){
+        //             const value = button.value ;
+        //             korpica.push(value);
+        //             console.log(korpica)
+        //         })
+        //     })
+        // }
+
+        // let nesto = document.querySelectorAll(".kliknutiKorpa");
+        // console.log(nesto.length);
+        // var korpica = [];
+        // document.querySelectorAll(".kliknutiKorpa").forEach(button =>{
+        //     button.addEventListener("click", function(){
+        //         let value = button.getAttribute('data-')
+        //         korpica.push(parseInt(value)); 
+        //         console.log(korpica)
+        //     })
+        // })
+
+
+        // function korpa(){
+        //     let proizvodiKorpa = reachLS("GotovaManga");
+        //     proizvodiKorpa = proveraKorpa(proizvodiKorpa);
+        //     // mangaIspisSve(proizvodiKorpa);
+        // }
+
+
+
     }
     var navListHref = ["cart.html","index.html","manga.html","about.html","contact.html","author.html"];
     var navName = ["<i class='fa-solid fa-cart-shopping'></i>","Home","Manga","About us","Check out","Author"];
@@ -284,6 +335,22 @@ function buttonFormCheck(){
 
     erorrs += supp;
     if(!erorrs){
+        let checkIfChecked = document.querySelector("#gridCheck");
+        if(checkIfChecked.checked){
+            let saveLocalStorage = [];
+            $('.catchAll').each(function(x){
+                saveLocalStorage.push($(this).val());
+            })
+            let selectDD = document.querySelector("#inputState");
+            let selectOp = selectDD.options[selectDD.selectedIndex];
+            let selectOpTx = selectOp.textContent;
+            saveLocalStorage.push(selectOpTx);
+            console.log(saveLocalStorage);
+            saveLS("Korisnik",saveLocalStorage);
+
+        }
+
+
         let print = document.querySelector("#nesto");
         print.setAttribute("class","alert alert-success mb-3");
 
@@ -292,7 +359,6 @@ function buttonFormCheck(){
         document.getElementById("buttonSend");
         document.getElementById("formAttach").reset();
     }
-
     console.log(erorrs);
 }
 
@@ -350,14 +416,33 @@ function formDropDown(divCol,LabelFor,LabelName,Id,nizValue,nizName){
 
 function formElementsText(divCol,LabelFor,LabelName,id,placeholder){
     write = "";
-    write += `
-    <div class="${divCol}">
-        <label for="${LabelFor}" class="form-label">${LabelName}</label>
-        <input type="text" class="form-control inputText" id="${id}" placeholder="${placeholder}"/>
-        <p class="alert alert-danger erorrs"></p>
-    </div>
-    `
-    document.querySelector("#formAttach").innerHTML += write;
+    if(reachLS("Korisnik")){
+        let nesto = reachLS("Korisnik")
+        let i = 1
+        nestoRadi = nesto[i];
+        console.log(nesto);
+        write += `
+        <div class="${divCol}">
+            <label for="${LabelFor}" class="form-label">${LabelName}</label>
+            <input type="text" class="form-control inputText catchAll" id="${id}" placeholder="${placeholder}" value="${nestoRadi}"/>
+            <p class="alert alert-danger erorrs"></p>
+        </div>
+        `
+        document.querySelector("#formAttach").innerHTML += write;
+        if(i == 7){
+            i = 1;
+        }
+    }
+    else{
+        write += `
+        <div class="${divCol}">
+            <label for="${LabelFor}" class="form-label">${LabelName}</label>
+            <input type="text" class="form-control inputText catchAll" id="${id}" placeholder="${placeholder}"/>
+            <p class="alert alert-danger erorrs"></p>
+        </div>
+        `
+        document.querySelector("#formAttach").innerHTML += write;
+    }
 }
 
 function teamMembersWrite(team){
@@ -384,7 +469,7 @@ function teamMembersWrite(team){
       </div>
         `
     }
-    console.log(write);
+    // console.log(write);
     document.querySelector("#attachTeam").innerHTML += write;
 }
 
@@ -433,11 +518,14 @@ function filter(mangaOri){
     $('.category:checked').each(function(x){
         ChoosedGenres.push(parseInt($(this).val()));
     })
-    console.log(ChoosedGenres);
+    $('#mangaispis').fadeOut(300)
+    // console.log(ChoosedGenres);
     if(ChoosedGenres.length != 0){
-        return mangaOri.filter(x => x.genreCat.some(y => ChoosedGenres.includes(y)));
+        $('#mangaispis').fadeIn(300)
+        return mangaOri.filter(x => x.genreCat.some(y => ChoosedGenres.includes(y)));    
     }
-    return mangaOri;
+    $('#mangaispis').fadeIn(500)
+    return mangaOri
 }
 
 function sort(mangaOri){
@@ -593,7 +681,7 @@ function mangaIspisSve(manga){
                 <div class="displayFlex">
                 ${discountCheck(i.discount,i.price)}
                 </div>
-                <div id="centriranje"><input type="button" name="buttonCard" value="Add to cart" class="btn btn-primary buttonCart"></div>
+                <div id="centriranje"><input type="button" data-="${i.id}" name="buttonCard" value="Add to cart" class="kliknutiKorpa btn btn-primary buttonCart"/></div>
             </div>
             </div>
         </div>
@@ -601,8 +689,3 @@ function mangaIspisSve(manga){
     }
     document.querySelector("#mangaispis").innerHTML = ispis;
 }
-
-// LOCAL STORAGE  SVIM BUTTONIMA DAJEM KLASU I ISTO RADIM KAO SA CHECK BOXOVIMA NA CLICK I PREKO QUERY SELECT SA THISI UBACUJEM U NIZ GDE CE BITI LOCALSTORAGE
-//NAKON TOGA U CHECK OUT-U POZIVAM LOCALSTORAGE SA NAZIVOM TOG KEY-A TJ NIZA KOJE JE SVE PROIZOVDE SELEKTOVAO
-// I ONDA GA SAMO ISPISEM U NEKI DIV ZA PRIKAZ. FORMA TAKODJE MOZE DA SADRZI IF I DA PITA DA LI JE TAJ NIZ SA PROIZVODIMA PRAZAN AKO JESTE USLOV NIJE ISPUENJEN I NE MOZE DA SE PORUCI AKO JESTE MOZE. 
-// PROBLEM NE MOZE VALUE DA SE UZIMA MORA NESTO DRUGO!!! POGLEDATI PREKO FONA CHATGPT
