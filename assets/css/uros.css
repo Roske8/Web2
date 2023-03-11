@@ -192,3 +192,9 @@
 .inputText{
     border-radius: 5px !important;
 }
+#FORgetme{
+    width: 15%;;
+    padding: 0px;
+    font-size: 15px;
+    border-radius: 10px;
+}

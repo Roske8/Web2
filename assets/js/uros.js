@@ -137,15 +137,25 @@ window.onload = function(){
         // }
         // document.querySelector("#checkoutUl").innerHTML = questions;
         
-
-
-        formElementsText("col-md-6","inputEmail","Email","inputEmail","joedoe@gmail.com");
-        formElementsText("col-md-6","inputFullName","Full Name","inputFullName","Joe Doe");
-        formElementsText("col-12","inputAddress","Address","inputAddress","Joe Does 8");
-        formElementsText("col-12","inputAddress2","Address 2","inputAddress2","If you want. Not necessary");
-        formElementsText("col-md-6","inputCity","City","inputCity","Belgrade");
-        formDropDown("col-md-4","inputState","State","inputState",[1,2,3,4,5,6,7,8,9,10],["Serbia","Russia","China","Argentina","Germany","France","Italy","Spain","Poland","Japanese"]);
-        formElementsText("col-md-2","inputZip","Zip","inputZip","");
+        if(reachLS("Korisnik")){
+            let nesto = reachLS("Korisnik");
+            formElementsText("col-md-6","inputEmail","Email","inputEmail","joedoe@gmail.com", nesto[0]);
+            formElementsText("col-md-6","inputFullName","Full Name","inputFullName","Joe Doe", nesto[1]);
+            formElementsText("col-12","inputAddress","Address","inputAddress","Joe Does 8", nesto[2]);
+            formElementsText("col-12","inputAddress2","Address 2","inputAddress2","If you want. Not necessary",nesto[3]);
+            formElementsText("col-md-6","inputCity","City","inputCity","Belgrade", nesto[4]);
+            formDropDown("col-md-4","inputState","State","inputState",[1,2,3,4,5,6,7,8,9,10],["Serbia","Russia","China","Argentina","Germany","France","Italy","Spain","Poland","Japanese"]);
+            formElementsText("col-md-2","inputZip","Zip","inputZip","", nesto[5]);
+        }
+        else{
+            formElementsText("col-md-6","inputEmail","Email","inputEmail","joedoe@gmail.com");
+            formElementsText("col-md-6","inputFullName","Full Name","inputFullName","Joe Doe");
+            formElementsText("col-12","inputAddress","Address","inputAddress","Joe Does 8");
+            formElementsText("col-12","inputAddress2","Address 2","inputAddress2","If you want. Not necessary");
+            formElementsText("col-md-6","inputCity","City","inputCity","Belgrade");
+            formDropDown("col-md-4","inputState","State","inputState",[1,2,3,4,5,6,7,8,9,10],["Serbia","Russia","China","Argentina","Germany","France","Italy","Spain","Poland","Japanese"]);
+            formElementsText("col-md-2","inputZip","Zip","inputZip","");
+        }
         var ch = "";
         ch = `
         <div class="col-12">
@@ -154,9 +164,19 @@ window.onload = function(){
                 <input type="checkbox" id="gridCheck" value="1"/>
             </div> 
         </div>
-
         `
         document.querySelector("#formAttach").innerHTML += ch;
+
+        // var buttons = "";
+        // buttons = `
+        //     <input type="button" class="btn btn-primary" value="Forget me" id="FORgetme"/>
+        // `
+        // document.querySelector("#formAttach").innerHTML += buttons
+
+        document.querySelector("#FORgetme").addEventListener("click", function(){
+            localStorage.removeItem("Korisnik");
+        });
+
         buttonFrom("col-12","Order");
         
 
@@ -280,7 +300,6 @@ window.onload = function(){
 
 
 }
-
 function buttonFormCheck(){
     var Email,flname,Address,City,Zip,DropDown
     var reEmail,reflName,reAddress,reCity,reZip
@@ -414,24 +433,17 @@ function formDropDown(divCol,LabelFor,LabelName,Id,nizValue,nizName){
     document.querySelector("#formAttach").innerHTML += write;
 }
 
-function formElementsText(divCol,LabelFor,LabelName,id,placeholder){
+function formElementsText(divCol,LabelFor,LabelName,id,placeholder,val){
     write = "";
     if(reachLS("Korisnik")){
-        let nesto = reachLS("Korisnik")
-        let i = 1
-        nestoRadi = nesto[i];
-        console.log(nesto);
         write += `
         <div class="${divCol}">
             <label for="${LabelFor}" class="form-label">${LabelName}</label>
-            <input type="text" class="form-control inputText catchAll" id="${id}" placeholder="${placeholder}" value="${nestoRadi}"/>
+            <input type="text" class="form-control inputText catchAll" id="${id}" placeholder="${placeholder}" value="${val}"/>
             <p class="alert alert-danger erorrs"></p>
         </div>
         `
         document.querySelector("#formAttach").innerHTML += write;
-        if(i == 7){
-            i = 1;
-        }
     }
     else{
         write += `

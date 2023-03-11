@@ -34,6 +34,14 @@
         font-size: 15px;
         border-radius: 10px;
     }
+    #FORgetme{
+        width: 30%;;
+        padding: 0px;
+        margin-left: 15px;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+    
 }
 @media screen and (max-width: 426px){
     #divWidth{
