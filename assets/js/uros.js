@@ -227,21 +227,25 @@ window.onload = function(){
         let cartLS = reachLS("Korpa")
         let filtrirani;
         console.log(cartLS)
-        filtrirani = GotovaManga.filter((x) => {
-            for(let i = 0 ; i < cartLS.length ; i++){
-                if(x.id === cartLS[i]){
-                    return true;
+        if(cartLS != null){
+            filtrirani = GotovaManga.filter((x) => {
+                for(let i = 0 ; i < cartLS.length ; i++){
+                    if(x.id === cartLS[i]){
+                        return true;
+                    }
                 }
+                return false
+            })
+            if(filtrirani.length > 3){
+                document.querySelector(".positioning").classList.remove('positioning');
             }
-            return false
-        })
-
-        if(filtrirani.length > 3){
-            document.querySelector(".positioning").classList.remove('positioning');
+            console.log(filtrirani);
+            mangaIspisSveCart(filtrirani);
         }
 
-        console.log(filtrirani);
-        mangaIspisSveCart(filtrirani);
+
+
+
 
     }
     var navListHref = ["cart.html","index.html","manga.html","about.html","contact.html","author.html"];
