@@ -204,6 +204,6 @@
 #marginsss{
     margin-top: 100px;
 }
-/* .positionStatic{
-    position: static !important;
-} */
+#mess{
+    margin: 0px auto;
+}

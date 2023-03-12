@@ -242,11 +242,10 @@ window.onload = function(){
             console.log(filtrirani);
             mangaIspisSveCart(filtrirani);
         }
-
-
-
-
-
+        else{
+            let message = `<h2 id="mess"> The cart is empty!!!</h2>`
+            document.querySelector("#mangaispiscart").innerHTML = message;
+        }
     }
     var navListHref = ["cart.html","index.html","manga.html","about.html","contact.html","author.html"];
     var navName = ["<i class='fa-solid fa-cart-shopping'></i>","Home","Manga","About us","Check out","Author"];
@@ -265,6 +264,7 @@ window.onload = function(){
 
 
 }
+
 function buttonFormCheck(){
     var Email,flname,Address,City,Zip,DropDown
     var reEmail,reflName,reAddress,reCity,reZip
