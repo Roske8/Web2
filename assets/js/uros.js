@@ -25,7 +25,6 @@ function AjaxCallBack(url,method,data,manga){
         }
     })
 }
-
 window.onload = function(){
 
     var path = window.location.pathname.split("/").pop();
@@ -75,10 +74,10 @@ window.onload = function(){
                 button.addEventListener("click", function(){
                     let value = button.getAttribute('data-')
                     korpica.push(parseInt(value));
-                    console.log(korpica) 
+                    console.log(korpica)
+                    saveLS("Korpa",korpica);
                 })
             })
-            
         });
         AjaxCallBack("mangaCat.json","GET","json",function(checkbox){
             checkBoxW(checkbox);
@@ -153,12 +152,6 @@ window.onload = function(){
         `
         document.querySelector("#formAttach").innerHTML += ch;
 
-        // var buttons = "";
-        // buttons = `
-        //     <input type="button" class="btn btn-primary" value="Forget me" id="FORgetme"/>
-        // `
-        // document.querySelector("#formAttach").innerHTML += buttons
-
         document.querySelector("#FORgetme").addEventListener("click", function(){
             localStorage.removeItem("Korisnik");
         });
@@ -229,6 +222,27 @@ window.onload = function(){
     }
     else{
         navProba = ["active","","","","",""]
+        
+        let GotovaManga = reachLS("GotovaManga");
+        let cartLS = reachLS("Korpa")
+        let filtrirani;
+        console.log(cartLS)
+        filtrirani = GotovaManga.filter((x) => {
+            for(let i = 0 ; i < cartLS.length ; i++){
+                if(x.id === cartLS[i]){
+                    return true;
+                }
+            }
+            return false
+        })
+
+        if(filtrirani.length > 3){
+            document.querySelector(".positioning").classList.remove('positioning');
+        }
+
+        console.log(filtrirani);
+        mangaIspisSveCart(filtrirani);
+
     }
     var navListHref = ["cart.html","index.html","manga.html","about.html","contact.html","author.html"];
     var navName = ["<i class='fa-solid fa-cart-shopping'></i>","Home","Manga","About us","Check out","Author"];
@@ -647,4 +661,30 @@ function mangaIspisSve(manga){
         `
     }
     document.querySelector("#mangaispis").innerHTML = ispis;
+}
+
+function mangaIspisSveCart(manga){
+    var ispis = "";
+    for(let i of manga){
+        ispis += `
+        <div class="col-lg-4 col-md-6 col-12 resp">
+            <div class="flexing spacing">
+                ${newItem(i.relaseStatus)}
+                <img class="img-size" src="${i.image.src}" alt="${i.image.alt}">
+                <div class="info">
+                <h6>${i.name}</h6>
+                <p class="font-weight year">${i.relaseDate}</p>
+                <p><span class="colorSpan">Genre:</span>${ispisZanrova(i.genres)}</p>
+                <p><span class="colorSpan">Author:</span>${i.author}</p>
+                <p><i class="fa-solid fa-star"></i>${i.score}</p>
+                <div class="displayFlex">
+                ${discountCheck(i.discount,i.price)}
+                </div>
+                <div id="centriranje"><input type="button" data-="${i.id}" name="buttonCard" value="Remove" class="kliknutiKorpa btn btn-primary buttonCart"/></div>
+            </div>
+            </div>
+        </div>
+        `
+    }
+    document.querySelector("#mangaispiscart").innerHTML = ispis;
 }

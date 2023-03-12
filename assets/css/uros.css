@@ -134,7 +134,7 @@
 #divWidth{
     width: 1120px;
 }
-#positioning{
+.positioning{
     position: absolute;
     bottom: 0px;
     width: 100%;
@@ -201,3 +201,9 @@
 #top{
     top: 0px !important;
 }
+#marginsss{
+    margin-top: 100px;
+}
+/* .positionStatic{
+    position: static !important;
+} */
