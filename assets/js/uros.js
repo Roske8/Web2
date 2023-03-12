@@ -627,7 +627,6 @@ function mangaIspisSest(Manga){
                     <p class="old-price">&euro;&nbsp;&nbsp;${i.price}</p>
                     <p class="font-weight">&euro;&nbsp;&nbsp;${i.discount}</p>
                     </div>
-                    <div id="centriranje"><input type="button" name="buttonCard" value="Add to cart" class="btn btn-primary buttonCart"></div>
                 </div>
                 </div>
             </div>
