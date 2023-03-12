@@ -639,7 +639,6 @@ function mangaIspisSest(Manga){
 }
 
 // ISPISIVANJE SVIH MANGI
-
 function mangaIspisSve(manga){
     var ispis = "";
     for(let i of manga){
